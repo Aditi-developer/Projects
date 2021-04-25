@@ -100,7 +100,8 @@ public class MVCController {
 		HashMap<String, Integer> map = new HashMap<>();
 		List<FormDataModel> frmList = (List<FormDataModel>) schoolDBRepository.findAll();
 		for(FormDataModel form : frmList) {
-			map.put(form.courseName, map.getOrDefault(map.get(form.getCourseName()), 0)+1);
+			Integer count = map.getOrDefault(form.getCourseName(), 0)+1;
+			map.put(form.courseName, count);
 		}
 		model.addAttribute("map", map);
 		System.out.println("Size is " + map.size());
