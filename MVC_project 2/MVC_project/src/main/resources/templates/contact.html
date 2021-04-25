@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>MVC Project</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<!-- CSS links -->
+	<link rel="stylesheet" href="/resources/css/index.css">
+	<a href="/">
+		<button type="HOME" class="btn btn-default">Home</button></a>
+	<a href="/schoolList">
+		<button type="School List" class="btn btn-default">List Collages</button></a>
+	<a href="/contact">
+		<button type="Contact-Us" class="btn btn-default">Contact Us</button></a>
+	<a href="/about">
+		<button type="About-Us" class="btn btn-default">About Us</button></a>
+<a href="/statics">
+	<button type="Statics" class="btn btn-default">Statics</button></a>
+<body>
+	<form action="#" th:action="@{/contact_us}" th:object="${contactUs}" method="post">
+		<span style="font-size: 30px">The current visitor count is </span>
+		<span style="font-size: 30px;color:blue" th:text="${pageCount}">noValue</span>
+		<div class="form-group row">
+			<label for="name" class="col-sm-2 col-form-label">
+				Name</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Enter Name">
+				<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Failed</p>
+				</div>				
+			</div>
+			<div class="form-group row">
+				<label for="mobileNumber" class="col-sm-2 col-form-label">Mobile Number</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="mobileNumber"
+						th:field="*{mobileNumber}"
+						placeholder="Enter Mobile Number">
+						
+						<p th:if="${#fields.hasErrors('mobileNumber')}"
+				th:errors="*{mobileNumber}">Failed error</p>
+				</div>	
+			</div>
+			
+			<div class="form-group row">
+				<label for="email" class="col-sm-2 col-form-label">email</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="email"
+						th:field="*{email}"
+						placeholder="Enter Email">
+						
+						<p th:if="${#fields.hasErrors('email')}"
+				th:errors="*{email}">Failed error</p>
+				</div>
+			</div>
+			
+			<button type="submit" 
+			class="btn btn-default">Submit</button>
+		
+	</form>
+</body>
+</html>

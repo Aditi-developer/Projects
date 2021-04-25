@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>MVC Project</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<!-- CSS links -->
+	<link rel="stylesheet" href="/resources/css/index.css">
+
+	<a href="/">
+		<button type="HOME" class="btn btn-default">Home</button></a>
+	<a href="/schoolList">
+		<button type="school List" class="btn btn-default">List School</button></a>
+	<a href="/contact">
+		<button type="Contact-Us" class="btn btn-default">Contact Us</button></a>
+	<a href="/about">
+		<button type="About-Us" class="btn btn-default">About Us</button></a>
+	<a href="/statics">
+	<button type="Statics" class="btn btn-default">Statics</button></a>
+<body>
+<div>
+<span style="font-size: 30px">The current visitor count is </span>
+<span style="font-size: 30px;color:blue" th:text="${pageCount}">noValue</span><br>
+</div>
+<div>
+<p> <h4>This website can be used to collect information from various individual about their school id, school name and the course. You can see entire form input list at one place.</p><br>
+<p>School is the place where we learn to read and write. It is the most crucial place for a student, and it helps us to learn new things.</br>
+<br><q><b>Education is our passport to the future, for tomorrow belongs to the people who prepare for it today.</q>
+</p></h4></br>
+</div>
+</body>
+</html>
